@@ -1,43 +1,90 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+    int main(){
 
-int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+        int opcao, secretNumber;
 
+        printf("Menu Inicial!\n");
+        printf("1. Iniciar Jogo\n");
+        printf("2. Ver Regras\n");
+        printf("3. Sair\n");
+        printf("Escolha uma opção.\n");
+        scanf("%d", &opcao);
+
+        switch (opcao)
+        {
+        case 1:
+            printf("Execução do Jogo\n");
+            break;
+        
+        case 2:
+            printf("As Regras são: População vence de PIB, PIB vence de Area e Area vence de População\n");
+            printf(" \n");
+            break;
+        
+         case 3:
+            printf("Saindo...\n");
+            break;
     
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+        default: printf("Opção inválida.\n");
+            break;
+        }
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+        int EscolhaJG, EscolhaCP;
+        srand(time(0));
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+        printf(" \n");
+        printf("Jogo dos Paises.\n");
+        printf("1. Pressione 1 Para China.\n");
+        printf("2. Pressione 2 Para Canadá.\n");
+        printf("3. Pressione 3 Para Rússia.\n");
+        printf("Boa Sorte!\n");
+        scanf("%d", &EscolhaJG);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+        EscolhaCP = rand() % 3 +1;
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+switch (EscolhaJG)
+        {
+        case 1:
+            printf("Jogador: China = População - ");
+            break;
+        case 2:
+            printf("Jogador: Canadá = PIB - ");
+            break;
+        case 3:
+            printf("Jogador: Rússia = Área - ");
+            break;
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+        default: printf("Opção Inválida\n");
+            break;
+        }
 
-    return 0;
-}
+switch (EscolhaCP)
+        {
+        case 1:
+            printf("Computador - China = População\n");
+            break;
+        case 2:
+            printf("Computador - Canadá = PIB\n");
+            break;
+        case 3:
+            printf("Computador:  Rússia = Área\n");
+            break;
+
+        }
+
+    if (EscolhaCP == EscolhaJG)
+        {printf("Empate\n");}
+        
+        else if (
+        (EscolhaJG ==1) && (EscolhaCP == 2) ||
+        (EscolhaJG == 2) && (EscolhaCP == 3) ||
+        (EscolhaJG == 3) && (EscolhaCP == 1) ) {
+        printf("Você ganhou.");}
+        
+        else {printf("Você perdeu!");}
+
+
+    }
